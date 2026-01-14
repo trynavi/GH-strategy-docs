@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Equi.Life Retention Roadmap - The Greenhouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f6f3;
+            color: #073232;
+            line-height: 1.6;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background: #f8f6f3;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(7, 50, 50, 0.08);
+        }
+        .nav-logo img {
+            height: 40px;
+        }
+        .nav-cta {
+            background: #073232;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-cta:hover {
+            background: #0a4545;
+        }
+        .hero {
+            padding: 80px 60px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .hero-content {
+            max-width: 520px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3D8E76;
+            margin-bottom: 24px;
+            border: 1px solid rgba(61, 142, 118, 0.2);
+        }
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #3D8E76;
+            border-radius: 50%;
+        }
+        .hero-brand-logo {
+            margin-bottom: 20px;
+        }
+        .hero-brand-logo img {
+            height: 50px;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #073232;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: #3D8E76;
+        }
+        .hero-subtitle {
+            font-size: 17px;
+            color: #073232;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+        .hero-subtitle strong {
+            color: #073232;
+            opacity: 1;
+        }
+        .hero-methodology {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3D8E76;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: gap 0.2s;
+        }
+        .hero-methodology:hover {
+            gap: 12px;
+        }
+        .hero-methodology svg {
+            width: 20px;
+            height: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(5px); }
+            60% { transform: translateY(3px); }
+        }
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(7, 50, 50, 0.15);
+        }
+        .hero-proof {
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #073232;
+            box-shadow: 0 4px 20px rgba(7, 50, 50, 0.1);
+        }
+        .hero-proof-avatars {
+            display: flex;
+        }
+        .hero-proof-avatars span {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #073232, #3D8E76);
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-right: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: white;
+        }
+        .section {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .section-left {
+            position: sticky;
+            top: 120px;
+        }
+        .section-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 72px;
+            color: #d4e8e2;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            background: #3D8E76;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .section-icon svg {
+            width: 22px;
+            height: 22px;
+            color: white;
+        }
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #073232;
+        }
+        .section-desc {
+            font-size: 15px;
+            color: #073232;
+            line-height: 1.7;
+            opacity: 0.7;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(7, 50, 50, 0.06);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .card-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #073232;
+        }
+        .card-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .card-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .card-tag.critical {
+            background: rgba(255, 107, 53, 0.12);
+            color: #FF6B35;
+        }
+        .card-tag.critical::before {
+            background: #FF6B35;
+        }
+        .card-tag.high {
+            background: rgba(61, 142, 118, 0.12);
+            color: #3D8E76;
+        }
+        .card-tag.high::before {
+            background: #3D8E76;
+        }
+        .card-tag.medium {
+            background: rgba(168, 85, 247, 0.12);
+            color: #A855F7;
+        }
+        .card-tag.medium::before {
+            background: #A855F7;
+        }
+        .card p {
+            font-size: 14px;
+            color: #073232;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+        .quick-wins {
+            background: #e8f0ed;
+            padding: 100px 60px;
+        }
+        .quick-wins-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .quick-wins-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3D8E76;
+            margin-bottom: 16px;
+        }
+        .quick-wins h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #073232;
+        }
+        .quick-wins-subtitle {
+            font-size: 15px;
+            color: #073232;
+            margin-bottom: 48px;
+            opacity: 0.7;
+        }
+        .quick-wins-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: left;
+        }
+        .quick-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(7, 50, 50, 0.06);
+        }
+        .quick-card-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .quick-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: #073232;
+        }
+        .quick-card h3 span {
+            color: #3D8E76;
+        }
+        .quick-card p {
+            font-size: 14px;
+            color: #073232;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+        .cta {
+            background: #073232;
+            padding: 80px 60px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(61, 142, 118, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .cta > p, .cta-content > p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        .cta .btn-primary {
+            background: #C8F168;
+            color: #073232;
+            padding: 16px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .cta .btn-primary:hover {
+            background: #d4f57a;
+        }
+        .cta .btn-secondary {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 28px;
+        }
+        .cta .btn-secondary:hover {
+            color: white;
+        }
+        .logo-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .logo-bar h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 32px;
+        }
+        .logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 28px 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .logo-grid img {
+            max-height: 28px;
+            max-width: 100px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .logo-grid img:hover {
+            opacity: 1;
+        }
+        @media (max-width: 1024px) {
+            .nav { padding: 16px 40px; }
+            .hero { padding: 60px 40px 80px; gap: 40px; }
+            .section { padding: 80px 40px; }
+            .section-grid { grid-template-columns: 280px 1fr; gap: 60px; }
+            .quick-wins { padding: 80px 40px; }
+            .cta { padding: 60px 40px 50px; }
+            .logo-grid { gap: 24px 40px; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 16px 24px; }
+            .nav-logo img { height: 32px; }
+            .nav-cta { padding: 10px 18px; font-size: 13px; }
+            .hero { grid-template-columns: 1fr; padding: 40px 24px 60px; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero h1 { font-size: 42px; }
+            .hero-subtitle { font-size: 16px; }
+            .hero-image { order: -1; display: flex; justify-content: center; }
+            .hero-image img { max-width: 300px; }
+            .hero-proof { right: auto; left: 50%; transform: translateX(-50%); bottom: -15px; font-size: 11px; padding: 10px 16px; }
+            .section { padding: 60px 24px; }
+            .section-grid { grid-template-columns: 1fr; gap: 40px; }
+            .section-left { position: static; text-align: center; }
+            .section-number { font-size: 56px; }
+            .section-icon { margin: 0 auto 20px; }
+            .section-title { font-size: 28px; }
+            .card { padding: 20px; gap: 16px; }
+            .card-icon { font-size: 24px; }
+            .card h3 { font-size: 15px; }
+            .card p { font-size: 13px; }
+            .quick-wins { padding: 60px 24px; }
+            .quick-wins h2 { font-size: 32px; }
+            .quick-wins-grid { grid-template-columns: 1fr; gap: 16px; }
+            .quick-card { padding: 24px; }
+            .cta { padding: 50px 24px 40px; }
+            .cta h2 { font-size: 32px; }
+            .cta-buttons { flex-direction: column; align-items: center; gap: 12px; margin-bottom: 40px; }
+            .logo-bar h3 { font-size: 16px; margin-bottom: 24px; }
+            .logo-grid { gap: 20px 32px; }
+            .logo-grid img { max-height: 22px; max-width: 80px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 36px; }
+            .hero-brand-logo img { height: 40px; }
+            .hero-image img { max-width: 260px; }
+            .section-number { font-size: 48px; }
+            .section-title { font-size: 24px; }
+            .quick-wins h2 { font-size: 28px; }
+            .cta h2 { font-size: 28px; }
+            .logo-grid { gap: 16px 24px; }
+            .logo-grid img { max-height: 20px; max-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+            <img src="https://i.imgur.com/T9KAsSa.png" alt="The Greenhouse">
+        </div>
+        <a href="https://app.usemotion.com/meet/kerri-mcdonald/7yv1zbn" class="nav-cta">Book Strategy Call</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Retention Strategy</div>
+            <div class="hero-brand-logo">
+                <img src="https://equi.life/cdn/shop/files/equi.life_logo_v2.png" alt="Equi.Life">
+            </div>
+            <h1><em>Retention</em><br>Roadmap</h1>
+            <p class="hero-subtitle">How to turn Daily Nutritional Support buyers into loyal wellness advocates through strategic education, subscription optimization, and cross-sell pathways that maximize lifetime value.</p>
+            <a href="#conversion" class="hero-methodology">
+                Our Methodology
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="https://equi.life/cdn/shop/files/Meal-Replacement-Shake-Vanilla.png" alt="Daily Nutritional Support">
+            <div class="hero-proof">
+                <div class="hero-proof-avatars">
+                    <span>K</span>
+                    <span>M</span>
+                    <span>J</span>
+                </div>
+                4.6★ from 2,800+ reviews
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="conversion">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">01</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Conversion of Daily Nutritional Support</h2>
+                <p class="section-desc">Converting prospects for a $65 functional shake requires overcoming skepticism about taste, efficacy, and value—particularly for those comparing to cheaper alternatives.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">📋</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Survey New Subscribers by Health Goal to Personalize Welcome Flows</h3>
+                        <p>At checkout or in the first email, ask whether they're focused on gut health, energy, weight management, or immune support. Segment your welcome series to highlight the specific benefits (prebiotics, adaptogens, or protein content) most relevant to each cohort, increasing perceived relevance and reducing early churn.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Optimize Subscription Sign-Up with Multi-Frequency Options</h3>
+                        <p>Your $65 30-serving container lasts one month for daily users but longer for occasional users. Test offering 30-day, 45-day, and 60-day subscription intervals at checkout, removing the friction of "too frequent" deliveries and capturing more subscribers who use it 4-5x per week instead of daily.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⭐</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Deploy Cart Abandonment Flows Featuring Taste & Results Testimonials</h3>
+                        <p>Address the two biggest objections—"Does it taste good?" and "Will it actually work?"—in your abandonment sequence. Feature video testimonials or before/after stories from your 2,800+ reviews, and consider offering a satisfaction guarantee reminder in email 2 to reduce purchase anxiety.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="repurchase">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">02</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Repurchase of Daily Nutritional Support</h2>
+                <p class="section-desc">Bridge the expectation gap between purchase and results while making subscription management seamless to prevent silent churn at the 30-60 day mark.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">📚</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Launch Post-Purchase Education Flows with Usage Timeline</h3>
+                        <p>Send a 4-email series over 30 days: Day 1 (recipe ideas & mixing tips), Day 7 (what to expect in week one), Day 14 (energy & digestion improvements), Day 30 (reinforcing long-term benefits like immune support). Set expectations that best results come after consistent use, reducing premature cancellations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔔</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Reduce Subscription Churn with Proactive Skip/Delay SMS</h3>
+                        <p>7 days before each shipment, send an SMS reminder with a one-click option to skip or delay. Many customers cancel subscriptions because they feel "trapped"—giving them control reduces churn by 15-25% while maintaining the relationship for future orders.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💌</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Deploy Win-Back Sequences for Lapsed Subscribers at 45 Days</h3>
+                        <p>Target customers who canceled after 1-2 orders with a 3-email series addressing common dropout reasons: offer a flavor swap (if they have both Vanilla and Chocolate), a discount on their next order, or new recipe inspiration. Recovery rate of 8-12% is typical for health products at this price point.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="cross-sell">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">03</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Cross-Sell to Other Products</h2>
+                <p class="section-desc">Expand customer value by introducing complementary supplements and wellness products that enhance the foundational nutrition from Daily Nutritional Support.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Build Post-Purchase Cross-Sell Flows Based on Health Pathways</h3>
+                        <p>30 days after first shake purchase, segment customers by their survey responses: gut health seekers get introduced to Daily Probiotic, energy seekers to Mitochondria Support, immune-focused to Daily Immunity. Time this when they're experiencing results and more receptive to expanding their routine.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎁</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Create Protocol Bundles That Combine DNS with Targeted Supplements</h3>
+                        <p>Offer pre-built "stacks" like "Complete Gut Health Protocol" (DNS + Daily Probiotic + Digest) or "Energy & Performance Stack" (DNS + Mitochondria + Adrenal Support) at a 15% bundle discount. Position these as Dr. Cabral-designed protocols rather than random product groupings to increase perceived value.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💎</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Activate Loyalty Program Rewards to Drive Second Category Purchases</h3>
+                        <p>Use your existing loyalty program to offer double points on first purchases in new categories (e.g., "Earn 200 points when you try your first single supplement"). Create a points-to-discount threshold that makes a second product feel like a deal, converting single-product buyers into multi-product customers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-wins" id="levers">
+        <div class="quick-wins-inner">
+            <div class="quick-wins-badge">✨ Quick Wins</div>
+            <h2>Additional Retention Levers</h2>
+            <p class="quick-wins-subtitle">Three high-impact operational improvements to strengthen Equi.Life's customer foundation.</p>
+            <div class="quick-wins-grid">
+                <div class="quick-card">
+                    <div class="quick-card-icon">📱</div>
+                    <h3><span>Communication Channels:</span> Launch SMS for Subscription Management</h3>
+                    <p>Enable two-way SMS for subscription edits (skip, delay, swap flavors) to reduce cancellation rates. Health & wellness brands see 20-30% lower churn when subscribers can text simple commands rather than logging into a portal.</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-card-icon">📸</div>
+                    <h3><span>Trust & Community:</span> Build UGC Campaign Around Transformation Stories</h3>
+                    <p>Incentivize customers to submit before/after stories (energy levels, digestion, weight) with loyalty points or product credits. Feature these in email
