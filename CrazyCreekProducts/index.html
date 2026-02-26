@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CrazyCreekProducts Retention Roadmap - The Greenhouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f6f3;
+            color: #073232;
+            line-height: 1.6;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background: #f8f6f3;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(7, 50, 50, 0.08);
+        }
+        .nav-logo img {
+            height: 40px;
+        }
+        .nav-cta {
+            background: #073232;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-cta:hover {
+            background: #0a4545;
+        }
+        .hero {
+            padding: 80px 60px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .hero-content {
+            max-width: 520px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3D8E76;
+            margin-bottom: 24px;
+            border: 1px solid rgba(61, 142, 118, 0.2);
+        }
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #3D8E76;
+            border-radius: 50%;
+        }
+        .hero-brand-logo {
+            margin-bottom: 20px;
+        }
+        .hero-brand-logo img {
+            height: 50px;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #073232;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: #3D8E76;
+        }
+        .hero-subtitle {
+            font-size: 17px;
+            color: #073232;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+        .hero-subtitle strong {
+            color: #073232;
+            opacity: 1;
+        }
+        .hero-methodology {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3D8E76;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: gap 0.2s;
+        }
+        .hero-methodology:hover {
+            gap: 12px;
+        }
+        .hero-methodology svg {
+            width: 20px;
+            height: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(5px); }
+            60% { transform: translateY(3px); }
+        }
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(7, 50, 50, 0.15);
+        }
+        .hero-proof {
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #073232;
+            box-shadow: 0 4px 20px rgba(7, 50, 50, 0.1);
+        }
+        .hero-proof-avatars {
+            display: flex;
+        }
+        .hero-proof-avatars span {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #073232, #3D8E76);
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-right: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: white;
+        }
+        .section {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .section-left {
+            position: sticky;
+            top: 120px;
+        }
+        .section-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 72px;
+            color: #d4e8e2;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            background: #3D8E76;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .section-icon svg {
+            width: 22px;
+            height: 22px;
+            color: white;
+        }
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #073232;
+        }
+        .section-desc {
+            font-size: 15px;
+            color: #073232;
+            line-height: 1.7;
+            opacity: 0.7;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(7, 50, 50, 0.06);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .card-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #073232;
+        }
+        .card-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .card-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .card-tag.critical {
+            background: rgba(255, 107, 53, 0.12);
+            color: #FF6B35;
+        }
+        .card-tag.critical::before {
+            background: #FF6B35;
+        }
+        .card-tag.high {
+            background: rgba(61, 142, 118, 0.12);
+            color: #3D8E76;
+        }
+        .card-tag.high::before {
+            background: #3D8E76;
+        }
+        .card-tag.medium {
+            background: rgba(168, 85, 247, 0.12);
+            color: #A855F7;
+        }
+        .card-tag.medium::before {
+            background: #A855F7;
+        }
+        .card p {
+            font-size: 14px;
+            color: #073232;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+        .quick-wins {
+            background: #e8f0ed;
+            padding: 100px 60px;
+        }
+        .quick-wins-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .quick-wins-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3D8E76;
+            margin-bottom: 16px;
+        }
+        .quick-wins h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #073232;
+        }
+        .quick-wins-subtitle {
+            font-size: 15px;
+            color: #073232;
+            margin-bottom: 48px;
+            opacity: 0.7;
+        }
+        .quick-wins-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: left;
+        }
+        .quick-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(7, 50, 50, 0.06);
+        }
+        .quick-card-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .quick-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: #073232;
+        }
+        .quick-card h3 span {
+            color: #3D8E76;
+        }
+        .quick-card p {
+            font-size: 14px;
+            color: #073232;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+        .cta {
+            background: #073232;
+            padding: 80px 60px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(61, 142, 118, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .cta > p, .cta-content > p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        .cta .btn-primary {
+            background: #C8F168;
+            color: #073232;
+            padding: 16px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .cta .btn-primary:hover {
+            background: #d4f57a;
+        }
+        .cta .btn-secondary {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 28px;
+        }
+        .cta .btn-secondary:hover {
+            color: white;
+        }
+        .logo-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .logo-bar h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 32px;
+        }
+        .logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 28px 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .logo-grid img {
+            max-height: 28px;
+            max-width: 100px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .logo-grid img:hover {
+            opacity: 1;
+        }
+        @media (max-width: 1024px) {
+            .nav { padding: 16px 40px; }
+            .hero { padding: 60px 40px 80px; gap: 40px; }
+            .section { padding: 80px 40px; }
+            .section-grid { grid-template-columns: 280px 1fr; gap: 60px; }
+            .quick-wins { padding: 80px 40px; }
+            .cta { padding: 60px 40px 50px; }
+            .logo-grid { gap: 24px 40px; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 16px 24px; }
+            .nav-logo img { height: 32px; }
+            .nav-cta { padding: 10px 18px; font-size: 13px; }
+            .hero { grid-template-columns: 1fr; padding: 40px 24px 60px; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero h1 { font-size: 42px; }
+            .hero-subtitle { font-size: 16px; }
+            .hero-image { order: -1; display: flex; justify-content: center; }
+            .hero-image img { max-width: 300px; }
+            .hero-proof { right: auto; left: 50%; transform: translateX(-50%); bottom: -15px; font-size: 11px; padding: 10px 16px; }
+            .section { padding: 60px 24px; }
+            .section-grid { grid-template-columns: 1fr; gap: 40px; }
+            .section-left { position: static; text-align: center; }
+            .section-number { font-size: 56px; }
+            .section-icon { margin: 0 auto 20px; }
+            .section-title { font-size: 28px; }
+            .card { padding: 20px; gap: 16px; }
+            .card-icon { font-size: 24px; }
+            .card h3 { font-size: 15px; }
+            .card p { font-size: 13px; }
+            .quick-wins { padding: 60px 24px; }
+            .quick-wins h2 { font-size: 32px; }
+            .quick-wins-grid { grid-template-columns: 1fr; gap: 16px; }
+            .quick-card { padding: 24px; }
+            .cta { padding: 50px 24px 40px; }
+            .cta h2 { font-size: 32px; }
+            .cta-buttons { flex-direction: column; align-items: center; gap: 12px; margin-bottom: 40px; }
+            .logo-bar h3 { font-size: 16px; margin-bottom: 24px; }
+            .logo-grid { gap: 20px 32px; }
+            .logo-grid img { max-height: 22px; max-width: 80px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 36px; }
+            .hero-brand-logo img { height: 40px; }
+            .hero-image img { max-width: 260px; }
+            .section-number { font-size: 48px; }
+            .section-title { font-size: 24px; }
+            .quick-wins h2 { font-size: 28px; }
+            .cta h2 { font-size: 28px; }
+            .logo-grid { gap: 16px 24px; }
+            .logo-grid img { max-height: 20px; max-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+    <a href="https://www.growwithgreenhouse.com">
+        <img src="https://i.imgur.com/T9KAsSa.png" alt="The Greenhouse">
+    </a>
+</div>
+        <a href="https://app.usemotion.com/meet/kerri-mcdonald/7yv1zbn" class="nav-cta">Book Strategy Call</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Retention Strategy</div>
+            <div class="hero-brand-logo">
+                <img src="https://crazycreek.com/cdn/shop/files/CrazyCreekLogoTextOnly_THICK_2393a94a-fb64-4d65-8a07-93109e498c81.png?height=72&v=1763669385" alt="CrazyCreekProducts">
+            </div>
+            <h1><em>Retention</em><br>Roadmap</h1>
+            <p class="hero-subtitle">Transform one-time Original Chair buyers into lifelong outdoor enthusiasts with a retention strategy built around comfort, adventure, and repeat campsite visits.</p>
+            <a href="#conversion" class="hero-methodology">
+                Our Methodology
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="https://crazycreek.com/cdn/shop/files/1020-100_back.jpg?v=1765324176&width=900" alt="Original Chair">
+            <div class="hero-proof">
+                <div class="hero-proof-avatars">
+                    <span>K</span>
+                    <span>M</span>
+                    <span>J</span>
+                </div>
+                40+ Years of Comfort
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="conversion">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">01</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Conversion of Original Chair</h2>
+                <p class="section-desc">Turn browsers into buyers by showing how the $59.95 Original Chair solves their specific outdoor seating problems—whether it's kayaking, camping, or stadium events.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Build an abandonment flow showcasing the Original Chair's versatility</h3>
+                        <p>Create a 3-email sequence that targets cart abandoners with specific use cases (kayaking back support, stadium seating, campsite comfort) and customer photos showing the chair in action. Include the 40-year legacy story to overcome price objections at $59.95.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📸</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Integrate user-generated content throughout the pre-purchase journey</h3>
+                        <p>Leverage the adventure-focused lifestyle imagery you already have and add customer testimonials showing real use cases. Create a welcome series that features customers using the Original Chair for kayaking, camping, and outdoor events to help prospects visualize ownership.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔍</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Segment new subscribers by their primary outdoor activity</h3>
+                        <p>Add a preference survey asking whether they're shopping for water sports, camping, stadium events, or home use. Tailor welcome flow messaging to their specific needs—kayakers see back support benefits, campers see portability, stadium-goers see compact convenience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="repurchase">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">02</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Repurchase of Original Chair</h2>
+                <p class="section-desc">Drive repeat purchases by educating customers on care, positioning the Original Chair as a gift, and reaching out when they're planning their next adventure.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">📬</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Deploy seasonal direct mail postcards before peak outdoor seasons</h3>
+                        <p>Send physical postcards in March (spring camping prep) and November (holiday gifting) to Original Chair buyers with a "gift your adventure buddy" message. Include a discount code for buying a second chair—position it as the perfect gift for their camping partner, fishing buddy, or fellow kayaker.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎁</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Create a post-purchase gifting campaign 60 days after first purchase</h3>
+                        <p>Send an email series highlighting the Original Chair as the ultimate outdoor gift with messaging like "Your camping buddy needs one too." Include gift-wrapping options and a multi-chair discount to encourage bulk purchases for family trips or adventure groups.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">💡</div>
+                    <div>
+                        <div class="card-tag medium">Medium Impact</div>
+                        <h3>Build a post-purchase education flow with care and usage tips</h3>
+                        <p>Launch a 4-email series (days 3, 7, 14, 30) teaching customers how to care for their Original Chair, pack it efficiently, and use it across different activities. Include tips for adjusting straps, cleaning, and storage to maximize longevity and satisfaction, reducing buyer's remorse.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="cross-sell">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">03</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Cross-Sell to Other Products</h2>
+                <p class="section-desc">Expand customer lifetime value by introducing complementary products like the HotSeat, Longback Chair, and Air Chair based on their Original Chair usage patterns.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🛤️</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Map purchase paths and create activity-based cross-sell flows</h3>
+                        <p>Analyze which products Original Chair buyers purchase next. Build automated flows that recommend the HotSeat for winter campers (30 days post-purchase), the Longback Chair for taller users seeking more support (45 days), or the Air Chair for backpackers wanting ultralight options (60 days).</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎒</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Create complementary product bundles for different adventure types</h3>
+                        <p>Develop themed bundles in your campaigns: "Kayaker's Comfort Kit" (Original Chair + PowerLounger), "Basecamp Setup" (Original Chair + HotSeat + Longback), and "Stadium Fan Pack" (2 Original Chairs). Offer bundle discounts to increase AOV and introduce customers to your full product range.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📊</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Segment campaigns using RFM analysis to target high-value customers</h3>
+                        <p>Identify customers who purchased in the last 90 days with high order values and send them early access to new products like the Air Chair or upgraded Longback models. Target frequent buyers with exclusive "adventure gear" collections featuring premium chairs and accessories before promoting to general list.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-wins" id="levers">
+        <div class="quick-wins-inner">
+            <div class="quick-wins-badge">✨ Quick Wins</div>
+            <h2>Additional Retention Levers</h2>
+            <p class="quick-wins-subtitle">Three high-impact operational improvements to strengthen CrazyCreekProducts' customer foundation.</p>
+            <div class="quick-wins-grid">
+                <div class="quick-card">
+                    <div class="quick-card-icon">⭐</div>
+                    <h3><span>Trust & Community:</span> Launch a systematic review collection campaign</h3>
+                    <p>With 40+ years in business, you have stories to tell. Send automated review requests 14 days post-purchase asking customers to share photos of their Original Chair in action. Feature the best UGC on product pages and in campaigns to build social proof.</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-card-icon">📱</div>
+                    <h3><span>Communication Channels:</span> Build an SMS program for adventure timing triggers</h3>
+                    <p>Capture mobile numbers at checkout and send timely SMS for flash sales before holiday weekends, new product drops, and seasonal promotions. Text is perfect for time-sensitive outdoor gear offers when customers are planning their next trip.</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-card-icon">🎯</div>
+                    <h3><span>Data & Tech:</span> Implement cohort tracking by acquisition channel</h3>
+                    <p>Track which marketing channels bring in customers who buy multiple chairs or upgrade to premium models like the Longback. Double down on channels that attract outdoor enthusiasts with higher LTV rather than one-time gift buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Scale CrazyCreekProducts' Retention?</h2>
+            <p>This strategy is just the surface. We specialize in deep-funnel optimization for Home & Garden brands, turning churn into consistent, recurring revenue.</p>
+            <div class="cta-buttons">
+                <a href="https://app.usemotion.com/meet/kerri-mcdonald/7yv1zbn" class="btn-primary">Book a Strategy Call</a>
+                <a href="https://clutch.co/profile/greenhouse-marketing#reviews" class="btn-secondary">See Our Reviews →</a>
+            </div>
+            <div class="logo-bar">
+                <h3>Trusted by 100+ Thriving Brands</h3>
+                <div class="logo-grid">
+                    <img src="https://i.imgur.com/gRy1lI2.png" alt="Client">
+                    <img src="https://i.imgur.com/WM32i5C.png" alt="Client">
+                    <img src="https://i.imgur.com/no5GgDf.png" alt="Client">
+                    <img src="https://i.imgur.com/SOyf35s.png" alt="Client">
+                    <img src="https://i.imgur.com/oM2kFg8.png" alt="Client">
+                    <img src="https://i.imgur.com/YHg6u6E.png" alt="Client">
+                    <img src="https://i.imgur.com/6xJ5s3N.png" alt="Client">
+                    <img src="https://i.imgur.com/pgpC4hp.png" alt="Client">
+                    <img src="https://i.imgur.com/P3EQ1GP.png" alt="Client">
+                    <img src="https://i.imgur.com/LjjVyXw.png" alt="Client">
+                    <img src="https://i.imgur.com/VMPJVlo.png" alt="Client">
+                    <img src="https://i.imgur.com/H6me9qN.png" alt="Client">
+                    <img src="https://i.imgur.com/w7TOIxY.png" alt="Client">
+                    <img src="https://i.imgur.com/Lvz5QUz.png" alt="Client">
+                    <img src="https://i.imgur.com/C07dXwc.png" alt="Client">
+                    <img src="https://i.imgur.com/eMfOTch.png" alt="Client">
+                    <img src="https://i.imgur.com/L0ut963.png" alt="Client">
+                    <img src="https://i.imgur.com/p1TqGHn.png" alt="Client">
+                    <img src="https://i.imgur.com/fNKNsdb.png" alt="Client">
+                    <img src="https://i.imgur.com/LQQ0kfZ.png" alt="Client">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
