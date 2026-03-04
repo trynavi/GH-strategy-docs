@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OrganicPlantMagic Retention Roadmap - The Greenhouse</title>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f8f6f3;
+            color: #073232;
+            line-height: 1.6;
+        }
+        .nav {
+            position: sticky;
+            top: 0;
+            background: #f8f6f3;
+            padding: 20px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            border-bottom: 1px solid rgba(7, 50, 50, 0.08);
+        }
+        .nav-logo img {
+            height: 40px;
+        }
+        .nav-cta {
+            background: #073232;
+            color: white;
+            padding: 12px 24px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+        }
+        .nav-cta:hover {
+            background: #0a4545;
+        }
+        .hero {
+            padding: 80px 60px 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .hero-content {
+            max-width: 520px;
+        }
+        .hero-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: #fff;
+            padding: 8px 16px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3D8E76;
+            margin-bottom: 24px;
+            border: 1px solid rgba(61, 142, 118, 0.2);
+        }
+        .hero-badge::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            background: #3D8E76;
+            border-radius: 50%;
+        }
+        .hero-brand-logo {
+            margin-bottom: 20px;
+        }
+        .hero-brand-logo img {
+            height: 50px;
+        }
+        .hero h1 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 56px;
+            font-weight: 400;
+            line-height: 1.1;
+            margin-bottom: 20px;
+            color: #073232;
+        }
+        .hero h1 em {
+            font-style: italic;
+            color: #3D8E76;
+        }
+        .hero-subtitle {
+            font-size: 17px;
+            color: #073232;
+            margin-bottom: 32px;
+            line-height: 1.7;
+            opacity: 0.8;
+        }
+        .hero-subtitle strong {
+            color: #073232;
+            opacity: 1;
+        }
+        .hero-methodology {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: #3D8E76;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+            transition: gap 0.2s;
+        }
+        .hero-methodology:hover {
+            gap: 12px;
+        }
+        .hero-methodology svg {
+            width: 20px;
+            height: 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(5px); }
+            60% { transform: translateY(3px); }
+        }
+        .hero-image {
+            position: relative;
+        }
+        .hero-image img {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 16px;
+            box-shadow: 0 20px 60px rgba(7, 50, 50, 0.15);
+        }
+        .hero-proof {
+            position: absolute;
+            bottom: -20px;
+            right: 20px;
+            background: white;
+            padding: 12px 20px;
+            border-radius: 100px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #073232;
+            box-shadow: 0 4px 20px rgba(7, 50, 50, 0.1);
+        }
+        .hero-proof-avatars {
+            display: flex;
+        }
+        .hero-proof-avatars span {
+            width: 28px;
+            height: 28px;
+            background: linear-gradient(135deg, #073232, #3D8E76);
+            border-radius: 50%;
+            border: 2px solid white;
+            margin-right: -8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: white;
+        }
+        .section {
+            padding: 100px 60px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .section-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 80px;
+            align-items: start;
+        }
+        .section-left {
+            position: sticky;
+            top: 120px;
+        }
+        .section-number {
+            font-family: 'Instrument Serif', serif;
+            font-size: 72px;
+            color: #d4e8e2;
+            line-height: 1;
+            margin-bottom: 20px;
+        }
+        .section-icon {
+            width: 44px;
+            height: 44px;
+            background: #3D8E76;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        .section-icon svg {
+            width: 22px;
+            height: 22px;
+            color: white;
+        }
+        .section-title {
+            font-family: 'Instrument Serif', serif;
+            font-size: 32px;
+            font-weight: 400;
+            line-height: 1.2;
+            margin-bottom: 16px;
+            color: #073232;
+        }
+        .section-desc {
+            font-size: 15px;
+            color: #073232;
+            line-height: 1.7;
+            opacity: 0.7;
+        }
+        .cards {
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+        }
+        .card {
+            background: white;
+            padding: 28px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(7, 50, 50, 0.06);
+            display: flex;
+            gap: 20px;
+            align-items: flex-start;
+        }
+        .card-icon {
+            font-size: 28px;
+            flex-shrink: 0;
+        }
+        .card h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #073232;
+        }
+        .card-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 6px 12px;
+            border-radius: 100px;
+            font-size: 10px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+        }
+        .card-tag::before {
+            content: '';
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+        }
+        .card-tag.critical {
+            background: rgba(255, 107, 53, 0.12);
+            color: #FF6B35;
+        }
+        .card-tag.critical::before {
+            background: #FF6B35;
+        }
+        .card-tag.high {
+            background: rgba(61, 142, 118, 0.12);
+            color: #3D8E76;
+        }
+        .card-tag.high::before {
+            background: #3D8E76;
+        }
+        .card-tag.medium {
+            background: rgba(168, 85, 247, 0.12);
+            color: #A855F7;
+        }
+        .card-tag.medium::before {
+            background: #A855F7;
+        }
+        .card p {
+            font-size: 14px;
+            color: #073232;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+        .quick-wins {
+            background: #e8f0ed;
+            padding: 100px 60px;
+        }
+        .quick-wins-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        .quick-wins-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #3D8E76;
+            margin-bottom: 16px;
+        }
+        .quick-wins h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 40px;
+            font-weight: 400;
+            margin-bottom: 12px;
+            color: #073232;
+        }
+        .quick-wins-subtitle {
+            font-size: 15px;
+            color: #073232;
+            margin-bottom: 48px;
+            opacity: 0.7;
+        }
+        .quick-wins-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            text-align: left;
+        }
+        .quick-card {
+            background: white;
+            padding: 32px;
+            border-radius: 16px;
+            box-shadow: 0 2px 12px rgba(7, 50, 50, 0.06);
+        }
+        .quick-card-icon {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+        .quick-card h3 {
+            font-size: 15px;
+            font-weight: 600;
+            margin-bottom: 12px;
+            line-height: 1.4;
+            color: #073232;
+        }
+        .quick-card h3 span {
+            color: #3D8E76;
+        }
+        .quick-card p {
+            font-size: 14px;
+            color: #073232;
+            line-height: 1.6;
+            opacity: 0.7;
+        }
+        .cta {
+            background: #073232;
+            padding: 80px 60px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        .cta::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(61, 142, 118, 0.3) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        .cta-content {
+            position: relative;
+            z-index: 1;
+        }
+        .cta h2 {
+            font-family: 'Instrument Serif', serif;
+            font-size: 44px;
+            font-weight: 400;
+            color: white;
+            margin-bottom: 16px;
+        }
+        .cta > p, .cta-content > p {
+            font-size: 16px;
+            color: rgba(255,255,255,0.7);
+            max-width: 500px;
+            margin: 0 auto 32px;
+            line-height: 1.7;
+        }
+        .cta-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        .cta .btn-primary {
+            background: #C8F168;
+            color: #073232;
+            padding: 16px 28px;
+            border-radius: 100px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .cta .btn-primary:hover {
+            background: #d4f57a;
+        }
+        .cta .btn-secondary {
+            color: rgba(255,255,255,0.7);
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            padding: 16px 28px;
+        }
+        .cta .btn-secondary:hover {
+            color: white;
+        }
+        .logo-bar {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding-top: 50px;
+            position: relative;
+            z-index: 1;
+        }
+        .logo-bar h3 {
+            font-family: 'Inter', sans-serif;
+            font-size: 18px;
+            font-weight: 600;
+            color: white;
+            margin-bottom: 32px;
+        }
+        .logo-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            gap: 28px 48px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        .logo-grid img {
+            max-height: 28px;
+            max-width: 100px;
+            width: auto;
+            height: auto;
+            object-fit: contain;
+            opacity: 0.8;
+            transition: opacity 0.2s;
+        }
+        .logo-grid img:hover {
+            opacity: 1;
+        }
+        @media (max-width: 1024px) {
+            .nav { padding: 16px 40px; }
+            .hero { padding: 60px 40px 80px; gap: 40px; }
+            .section { padding: 80px 40px; }
+            .section-grid { grid-template-columns: 280px 1fr; gap: 60px; }
+            .quick-wins { padding: 80px 40px; }
+            .cta { padding: 60px 40px 50px; }
+            .logo-grid { gap: 24px 40px; }
+        }
+        @media (max-width: 768px) {
+            .nav { padding: 16px 24px; }
+            .nav-logo img { height: 32px; }
+            .nav-cta { padding: 10px 18px; font-size: 13px; }
+            .hero { grid-template-columns: 1fr; padding: 40px 24px 60px; text-align: center; }
+            .hero-content { max-width: 100%; }
+            .hero h1 { font-size: 42px; }
+            .hero-subtitle { font-size: 16px; }
+            .hero-image { order: -1; display: flex; justify-content: center; }
+            .hero-image img { max-width: 300px; }
+            .hero-proof { right: auto; left: 50%; transform: translateX(-50%); bottom: -15px; font-size: 11px; padding: 10px 16px; }
+            .section { padding: 60px 24px; }
+            .section-grid { grid-template-columns: 1fr; gap: 40px; }
+            .section-left { position: static; text-align: center; }
+            .section-number { font-size: 56px; }
+            .section-icon { margin: 0 auto 20px; }
+            .section-title { font-size: 28px; }
+            .card { padding: 20px; gap: 16px; }
+            .card-icon { font-size: 24px; }
+            .card h3 { font-size: 15px; }
+            .card p { font-size: 13px; }
+            .quick-wins { padding: 60px 24px; }
+            .quick-wins h2 { font-size: 32px; }
+            .quick-wins-grid { grid-template-columns: 1fr; gap: 16px; }
+            .quick-card { padding: 24px; }
+            .cta { padding: 50px 24px 40px; }
+            .cta h2 { font-size: 32px; }
+            .cta-buttons { flex-direction: column; align-items: center; gap: 12px; margin-bottom: 40px; }
+            .logo-bar h3 { font-size: 16px; margin-bottom: 24px; }
+            .logo-grid { gap: 20px 32px; }
+            .logo-grid img { max-height: 22px; max-width: 80px; }
+        }
+        @media (max-width: 480px) {
+            .hero h1 { font-size: 36px; }
+            .hero-brand-logo img { height: 40px; }
+            .hero-image img { max-width: 260px; }
+            .section-number { font-size: 48px; }
+            .section-title { font-size: 24px; }
+            .quick-wins h2 { font-size: 28px; }
+            .cta h2 { font-size: 28px; }
+            .logo-grid { gap: 16px 24px; }
+            .logo-grid img { max-height: 20px; max-width: 70px; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <div class="nav-logo">
+    <a href="https://www.growwithgreenhouse.com">
+        <img src="https://i.imgur.com/T9KAsSa.png" alt="The Greenhouse">
+    </a>
+</div>
+        <a href="https://app.usemotion.com/meet/kerri-mcdonald/7yv1zbn" class="nav-cta">Book Strategy Call</a>
+    </nav>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Retention Strategy</div>
+            <div class="hero-brand-logo">
+                <img src="https://organicplantmagic.com/cdn/shop/t/20/assets/organic-plant-magic-logo_132x72.png?v=176410752620908921811692770697" alt="OrganicPlantMagic">
+            </div>
+            <h1><em>Retention</em><br>Roadmap</h1>
+            <p class="hero-subtitle">Turn one-time Fast-Acting Soluble Plant Food buyers into loyal gardeners who return season after season and expand their organic growing toolkit.</p>
+            <a href="#conversion" class="hero-methodology">
+                Our Methodology
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+            </a>
+        </div>
+        <div class="hero-image">
+            <img src="https://organicplantmagic.com/cdn/shop/products/product-soluble-plant-food-half-lb.jpg?crop=center&height=660&v=1660088047&width=1176" alt="Fast-Acting Soluble Plan Food">
+            <div class="hero-proof">
+                <div class="hero-proof-avatars">
+                    <span>K</span>
+                    <span>M</span>
+                    <span>J</span>
+                </div>
+                5.0/5 from 500+ reviews
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="conversion">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">01</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Conversion of Fast-Acting Soluble Plan Food</h2>
+                <p class="section-desc">Most gardeners discover OrganicPlantMagic when they have a specific plant problem. Optimizing the first-touch experience means meeting them in that moment of need and building confidence in your $24.99 solution.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🌱</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Build a Welcome Series That Segments by Growing Goal</h3>
+                        <p>Since your products serve different plant types (vegetables, flowers, lawns, houseplants), survey new subscribers immediately to ask "What are you growing?" This lets you send targeted content about your Fast-Acting Soluble Plant Food's specific benefits for their garden type, making the $24.99 price point feel like a custom solution rather than a generic fertilizer.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⭐</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Deploy Cart Abandonment Flows with Application Math</h3>
+                        <p>Your 0.5 lb container makes 50+ gallons of fertilizer—a detail buried on the product page. In abandonment emails, lead with "Just $0.50 per gallon" and show a visual calculator. This reframes the purchase from "expensive fertilizer" to "bulk savings," addressing the #1 objection for organic gardening products.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📸</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Integrate Before/After UGC Into Browse Abandonment</h3>
+                        <p>Your customers show dramatic results in reviews (larger tomatoes, greener lawns in 7 days). Create a browse abandonment sequence specifically for the Fast-Acting formula that features 3-4 customer transformation photos with timestamps. This visual proof addresses skepticism about organic fertilizers working as fast as synthetic options.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="repurchase">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">02</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Repurchase of Fast-Acting Soluble Plan Food</h2>
+                <p class="section-desc">A 0.5 lb container lasts 2-4 months depending on garden size. The gap between purchase and depletion is where customers drift to competitors or forget to reorder. Bridge this gap with education and timely reminders.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">📅</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Launch a 60-Day Replenishment Sequence</h3>
+                        <p>Based on weekly feeding schedules in your usage instructions, a 0.5 lb container depletes around day 60 for most gardeners. Build an automated email series: Day 7 (application tips), Day 21 (what results to expect), Day 45 (you're halfway through), Day 55 (reorder reminder with 15% off). This keeps OrganicPlantMagic top-of-mind during the critical reorder window.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🎯</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Create Seasonal Post-Purchase Education Flows</h3>
+                        <p>Purchase behavior changes with growing seasons. Build distinct post-purchase journeys for spring buyers (outdoor garden tips, transition to summer feeding) vs. fall/winter buyers (houseplant care, starting seeds indoors). Include season-specific success stories and remind them when to reorder before the next growing phase.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">📬</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Send Direct Mail at Day 75 for Lapsed Customers</h3>
+                        <p>If a customer hasn't repurchased by day 75, they've likely run out and gone elsewhere. Send a postcard with a "We miss your garden" message, a 20% reorder discount code, and a QR code to a landing page showing new customer results. Physical mail stands out in the gardening demographic (skews 45+) and recaptures customers before they become fully lapsed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="cross-sell">
+        <div class="section-grid">
+            <div class="section-left">
+                <div class="section-number">03</div>
+                <div class="section-icon">
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </div>
+                <h2 class="section-title">Increase Cross-Sell to Other Products</h2>
+                <p class="section-desc">Fast-Acting Soluble Plant Food buyers are primed for your complementary products like All-Purpose Fertilizer, Bloom & Root, and Soil Magic. Strategic cross-sell timing increases LTV from $24.99 to $75+.</p>
+            </div>
+            <div class="cards">
+                <div class="card">
+                    <div class="card-icon">🎁</div>
+                    <div>
+                        <div class="card-tag critical">Critical Impact</div>
+                        <h3>Build Problem-Solution Product Bundles</h3>
+                        <p>Create bundled offers that solve complete growing challenges: "Transplant Success Kit" (Fast-Acting Soluble + Bloom & Root at $44.99), "Complete Lawn Care" (Fast-Acting + Green-UP Lawn at $49.99), "Garden Starter Bundle" (Fast-Acting + All-Purpose + Soil Magic at $69.99). Promote these in post-purchase day 3 emails when satisfaction is highest.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">🔄</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Deploy RFM-Based Cross-Sell Campaigns</h3>
+                        <p>Segment Fast-Acting buyers by engagement: High-value customers (2+ purchases, opens emails) get early access to your Instant Compost Tea with exclusive pricing. Mid-tier customers get educational content about "The Complete Feeding System" (liquid + granular). Lapsed customers get a "We've Added New Products" re-engagement campaign featuring your newest innovations.</p>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-icon">⏰</div>
+                    <div>
+                        <div class="card-tag high">High Impact</div>
+                        <h3>Time Cross-Sell Flows to Natural Growing Milestones</h3>
+                        <p>Map product recommendations to plant growth stages: Day 30 (plants are established, introduce Bloom & Root for flowering), Day 45 (upsell All-Purpose Fertilizer for maintenance feeding), Day 60 (introduce Soil Magic for bed preparation). This positions each product as the logical next step rather than random upsells, increasing conversion rates.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="quick-wins" id="levers">
+        <div class="quick-wins-inner">
+            <div class="quick-wins-badge">✨ Quick Wins</div>
+            <h2>Additional Retention Levers</h2>
+            <p class="quick-wins-subtitle">Three high-impact operational improvements to strengthen OrganicPlantMagic's customer foundation.</p>
+            <div class="quick-wins-grid">
+                <div class="quick-card">
+                    <div class="quick-card-icon">💬</div>
+                    <h3><span>Trust & Community:</span> Launch a Post-Purchase Review Request Campaign</h3>
+                    <p>With 5-star ratings but only 500+ reviews across your product line, you're missing social proof. Send an automated SMS or email at day 14 (when results are visible) asking for a photo review in exchange for $5 off their next order. Display these photos on product pages to boost conversion rates 15-25%.</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-card-icon">📊</div>
+                    <h3><span>Data & Tech:</span> Track Time-to-Second-Purchase by Acquisition Source</h3>
+                    <p>Not all customers repurchase at the same rate. Set up cohort tracking to measure how quickly customers from Google (problem-aware) vs. Facebook (discovery) vs. Email (returning visitors) make their second purchase. This reveals which channels drive true retention, not just first-time sales, and informs budget allocation.</p>
+                </div>
+                <div class="quick-card">
+                    <div class="quick-card-icon">✅</div>
+                    <h3><span>Customer Experience:</span> Implement a "Garden Success Guarantee"</h3>
+                    <p>Organic fertilizer skeptics need confidence. Create a 60-day guarantee: "If you don't see healthier plants in 60 days, we'll refund you and let you keep the product." This removes purchase risk, and the 60-day window gets customers through one full container—making them likely repeat buyers even if they don't claim the guarantee.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="cta">
+        <div class="cta-content">
+            <h2>Ready to Scale OrganicPlantMagic's Retention?</h2>
+            <p>This strategy is just the surface. We specialize in deep-funnel optimization for Home & Garden brands, turning churn into consistent, recurring revenue.</p>
+            <div class="cta-buttons">
+                <a href="https://app.usemotion.com/meet/kerri-mcdonald/7yv1zbn" class="btn-primary">Book a Strategy Call</a>
+                <a href="https://clutch.co/profile/greenhouse-marketing#reviews" class="btn-secondary">See Our Reviews →</a>
+            </div>
+            <div class="logo-bar">
+                <h3>Trusted by 100+ Thriving Brands</h3>
+                <div class="logo-grid">
+                    <img src="https://i.imgur.com/gRy1lI2.png" alt="Client">
+                    <img src="https://i.imgur.com/WM32i5C.png" alt="Client">
+                    <img src="https://i.imgur.com/no5GgDf.png" alt="Client">
+                    <img src="https://i.imgur.com/SOyf35s.png" alt="Client">
+                    <img src="https://i.imgur.com/oM2kFg8.png" alt="Client">
+                    <img src="https://i.imgur.com/YHg6u6E.png" alt="Client">
+                    <img src="https://i.imgur.com/6xJ5s3N.png" alt="Client">
+                    <img src="https://i.imgur.com/pgpC4hp.png" alt="Client">
+                    <img src="https://i.imgur.com/P3EQ1GP.png" alt="Client">
+                    <img src="https://i.imgur.com/LjjVyXw.png" alt="Client">
+                    <img src="https://i.imgur.com/VMPJVlo.png" alt="Client">
+                    <img src="https://i.imgur.com/H6me9qN.png" alt="Client">
+                    <img src="https://i.imgur.com/w7TOIxY.png" alt="Client">
+                    <img src="https://i.imgur.com/Lvz5QUz.png" alt="Client">
+                    <img src="https://i.imgur.com/C07dXwc.png" alt="Client">
+                    <img src="https://i.imgur.com/eMfOTch.png" alt="Client">
+                    <img src="https://i.imgur.com/L0ut963.png" alt="Client">
+                    <img src="https://i.imgur.com/p1TqGHn.png" alt="Client">
+                    <img src="https://i.imgur.com/fNKNsdb.png" alt="Client">
+                    <img src="https://i.imgur.com/LQQ0kfZ.png" alt="Client">
+                </div>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
